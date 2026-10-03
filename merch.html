@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874053" data-cfasync="false" async></script>
+<script>(function(s){s.dataset.zone='11874070',s.src='https://n6wxm.com/vignette.min.js'}([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script'))))</script>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874065" data-cfasync="false" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Merch — KWG&E Store</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/store.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="store-top">
+    <a class="wordmark" href="/"><img src="/assets/logo.jpg" alt="KillerWhale G&E logo">KillerWhale G&amp;E</a>
+    <nav class="store-tabs">
+      <a href="/">Home</a>
+      <a href="/software">Software</a>
+      <a href="/books">Books</a>
+      <a href="/services">Services</a>
+      <a href="/merch" class="active">Merch</a>
+      <a href="/support">Support</a>
+    </nav>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" onclick="openDrawer('wishlist-drawer')">♡ Wishlist<span id="wishlist-count" class="icon-count">0</span></button>
+      <button class="icon-btn" onclick="openDrawer('cart-drawer')">Cart</button>
+    </div>
+  </header>
+
+  <div class="banner">
+    <div class="banner-slide show"><h2>Merch is in design</h2><p>Nothing to show yet — check back soon.</p><a class="btn btn-primary" href="/support">Suggest something</a></div>
+    <button class="banner-arrow prev">‹</button>
+    <button class="banner-arrow next">›</button>
+    <div class="banner-dots"></div>
+  </div>
+
+  <section style="border-bottom:none">
+    <div class="store-layout">
+      <aside class="sidebar">
+        <div class="filter-group">
+          <h4>Type</h4>
+          <label><input type="checkbox" value="apparel"> Apparel</label>
+          <label><input type="checkbox" value="accessory"> Accessories</label>
+        </div>
+        <div class="filter-group">
+          <h4>Price</h4>
+          <label><input type="checkbox" value="low"> Under $20</label>
+        </div>
+        <div class="filter-group">
+          <h4>Tags</h4>
+          <span class="tag-chip" data-tag="logo">Logo Wear</span>
+          <span class="tag-chip" data-tag="omniverse">Omniverse</span>
+        </div>
+      </aside>
+      <div class="tile-grid">
+        <div class="tile"><div class="tile-thumb">Coming soon</div><div class="tile-body"><h3>Nothing listed yet</h3><div class="tile-meta"><span>Check back soon</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 KillerWhale G&amp;E</span>
+    <span><a href="/support" style="text-decoration:none;color:var(--slate)">Need help? →</a></span>
+  </footer>
+</div>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
+<div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
+<div class="toast" id="toast"></div>
+<script src="/store.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874053" data-cfasync="false" async></script>
+<script>(function(s){s.dataset.zone='11874070',s.src='https://n6wxm.com/vignette.min.js'}([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script'))))</script>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874065" data-cfasync="false" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support — KWG&E Store</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/store.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="store-top">
+    <a class="wordmark" href="/"><img src="/assets/logo.jpg" alt="KillerWhale G&E logo">KillerWhale G&amp;E</a>
+    <nav class="store-tabs">
+      <a href="/">Home</a>
+      <a href="/software">Software</a>
+      <a href="/books">Books</a>
+      <a href="/services">Services</a>
+      <a href="/merch">Merch</a>
+      <a href="/support" class="active">Support</a>
+    </nav>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" onclick="openDrawer('wishlist-drawer')">♡ Wishlist<span id="wishlist-count" class="icon-count">0</span></button>
+      <button class="icon-btn" onclick="openDrawer('cart-drawer')">Cart</button>
+    </div>
+  </header>
+
+  <section class="hero" style="padding-bottom:0">
+    <h1 style="max-width:none;font-size:2.1rem">Support</h1>
+    <p>Different question, different place to send it — pick whichever fits.</p>
+  </section>
+
+  <section style="border-bottom:none">
+    <div class="grid">
+      <div class="card">
+        <h3>Report an inappropriate ad</h3>
+        <p style="color:var(--slate);font-size:.9rem;margin:8px 0 14px">Saw an ad that crossed a line? Let us know what it was and where, and we'll look into it.</p>
+        <a href="mailto:Killerwhalegande@gmail.com?subject=Ad%20report" style="color:var(--accent);text-decoration:none;font-size:.88rem">Report via email →</a>
+      </div>
+      <div class="card">
+        <h3>Request something be listed</h3>
+        <p style="color:var(--slate);font-size:.9rem;margin:8px 0 14px">Made something and want it on the store? Tell us what it is and a link if you've got one.</p>
+        <a href="https://discord.com/invite/GJVceufN6a" style="color:var(--accent);text-decoration:none;font-size:.88rem">Ask on Discord →</a>
+      </div>
+      <div class="card">
+        <h3>Something's broken</h3>
+        <p style="color:var(--slate);font-size:.9rem;margin:8px 0 14px">Download not working, page acting up — let us know exactly what happened.</p>
+        <a href="mailto:Killerwhalegande@gmail.com?subject=Bug%20report" style="color:var(--accent);text-decoration:none;font-size:.88rem">Email us →</a>
+      </div>
+      <div class="card">
+        <h3>Everything else</h3>
+        <p style="color:var(--slate);font-size:.9rem;margin:8px 0 14px">General questions, business inquiries, or anything that doesn't fit above.</p>
+        <a href="mailto:Killerwhalegande@gmail.com" style="color:var(--accent);text-decoration:none;font-size:.88rem">Email us →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 KillerWhale G&amp;E</span>
+    <span>Killerwhalegande@gmail.com</span>
+  </footer>
+</div>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
+<div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
+<div class="toast" id="toast"></div>
+<script src="/store.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874053" data-cfasync="false" async></script>
+<script>(function(s){s.dataset.zone='11874070',s.src='https://n6wxm.com/vignette.min.js'}([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script'))))</script>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874065" data-cfasync="false" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Services — KWG&E Store</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/store.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="store-top">
+    <a class="wordmark" href="/"><img src="/assets/logo.jpg" alt="KillerWhale G&E logo">KillerWhale G&amp;E</a>
+    <nav class="store-tabs">
+      <a href="/">Home</a>
+      <a href="/software">Software</a>
+      <a href="/books">Books</a>
+      <a href="/services" class="active">Services</a>
+      <a href="/merch">Merch</a>
+      <a href="/support">Support</a>
+    </nav>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" onclick="openDrawer('wishlist-drawer')">♡ Wishlist<span id="wishlist-count" class="icon-count">0</span></button>
+      <button class="icon-btn" onclick="openDrawer('cart-drawer')">Cart</button>
+    </div>
+  </header>
+
+  <div class="banner">
+    <div class="banner-slide show"><h2>Web Hosting Without the Headache</h2><p>Send us your project, we handle deployment and hosting.</p><a class="btn btn-primary" href="/services/web-hosting">Learn more</a></div>
+    <div class="banner-slide"><h2>Quick &amp; Short Server Hosting</h2><p>A few days of game server, set up on request.</p><a class="btn btn-primary" href="/services/server-hosting">Learn more</a></div>
+    <div class="banner-slide"><h2>Code Writing</h2><p>HTML, JS, Python, or whatever you need built.</p><a class="btn btn-primary" href="/services/code-writing">Learn more</a></div>
+    <div class="banner-slide"><h2>Privacy on request</h2><p>Need your identity kept off a project? We can do that.</p><a class="btn btn-primary" href="/services/web-hosting">Read more</a></div>
+    <div class="banner-slide"><h2>Got a request?</h2><p>Reach out and we'll figure out what fits.</p><a class="btn btn-primary" href="/support">Contact us</a></div>
+    <button class="banner-arrow prev">‹</button>
+    <button class="banner-arrow next">›</button>
+    <div class="banner-dots"></div>
+  </div>
+
+  <section style="border-bottom:none">
+    <div class="store-layout">
+      <aside class="sidebar">
+        <div class="filter-group">
+          <h4>Type</h4>
+          <label><input type="checkbox" value="hosting"> Hosting</label>
+          <label><input type="checkbox" value="dev"> Development</label>
+        </div>
+        <div class="filter-group">
+          <h4>Price</h4>
+          <label><input type="checkbox" value="free"> Free / low-cost</label>
+        </div>
+        <div class="filter-group">
+          <h4>Tags</h4>
+          <span class="tag-chip" data-tag="web">Web</span>
+          <span class="tag-chip" data-tag="game-server">Game Servers</span>
+          <span class="tag-chip" data-tag="privacy">Privacy</span>
+          <span class="tag-chip" data-tag="custom">Custom Work</span>
+        </div>
+      </aside>
+
+      <div class="tile-grid">
+        <a class="tile" href="/services/web-hosting" data-cat="hosting" data-tags="free,web,privacy">
+          <div class="tile-thumb">Web Hosting</div>
+          <div class="tile-body"><h3>Web Hosting Without the Headache</h3><div class="tile-meta"><span class="status-badge status-live">Live</span><span>Free – under $1</span></div></div>
+        </a>
+        <a class="tile" href="/services/server-hosting" data-cat="hosting" data-tags="game-server">
+          <div class="tile-thumb">Server Hosting</div>
+          <div class="tile-body"><h3>Quick &amp; Short Server Hosting</h3><div class="tile-meta"><span class="status-badge status-live">Live</span><span>Priced on request</span></div></div>
+        </a>
+        <a class="tile" href="/services/code-writing" data-cat="dev" data-tags="custom,web">
+          <div class="tile-thumb">Code Writing</div>
+          <div class="tile-body"><h3>Code Writing</h3><div class="tile-meta"><span class="status-badge status-live">Live</span><span>Free+</span></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 KillerWhale G&amp;E</span>
+    <span><a href="/support" style="text-decoration:none;color:var(--slate)">Need help? →</a></span>
+  </footer>
+</div>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
+<div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
+<div class="toast" id="toast"></div>
+<script src="/store.js"></script>
+</body>
+</html>
