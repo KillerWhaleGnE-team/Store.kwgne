@@ -6,9 +6,31 @@
 <script src="https://5gvci.com/act/files/tag.min.js?z=11874065" data-cfasync="false" async></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DrivrHlthChkr — KWG&E Store</title>
+<title>DrivrHlthChkr v2 — KWG&E Store</title>
+<meta name="description" content="Free Windows driver health scanner. One-click standalone .exe, no install, nothing to set up.">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/store.css">
+<style>
+  .dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .dl-card h3{margin:0 0 6px;font-size:1.05rem}
+  .dl-card p{color:var(--slate);font-size:.88rem;margin:0 0 14px}
+  .dl-card .fine{font-size:.78rem;margin:10px 0 0}
+  .dl-card .fine a{color:var(--slate)}
+  .steps{margin:0;padding-left:20px;color:var(--slate);font-size:.93rem;max-width:64ch}
+  .steps li{margin-bottom:10px}
+  .steps strong{color:var(--ink)}
+  .status-list{display:grid;gap:10px;max-width:64ch}
+  .status-row{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel);font-size:.88rem;color:var(--slate)}
+  .status-row b{color:var(--ink);display:block;margin-bottom:3px}
+  .callout{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:14px 16px;background:var(--panel);color:var(--slate);font-size:.9rem;max-width:64ch}
+  .callout strong{color:var(--ink)}
+  .spec-table{border-collapse:collapse;font-size:.9rem;color:var(--slate)}
+  .spec-table td{padding:6px 24px 6px 0;vertical-align:top}
+  .spec-table td:first-child{color:var(--ink)}
+  code{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:.85em}
+  ul.plain{margin:0;padding-left:20px;color:var(--slate);font-size:.93rem;max-width:64ch}
+  ul.plain li{margin-bottom:6px}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -32,11 +54,12 @@
     <p style="color:var(--slate);font-size:.85rem;margin:18px 0 0"><a href="/software" style="color:var(--slate);text-decoration:none">← Software</a></p>
     <div class="product-head" style="margin-top:14px">
       <div>
-        <h1 style="margin:0 0 6px;font-size:1.8rem">DrivrHlthChkr</h1>
+        <h1 style="margin:0 0 6px;font-size:1.8rem">DrivrHlthChkr <span style="color:var(--slate);font-size:1rem;font-weight:500">v2</span></h1>
         <span class="status-badge status-live">Live</span>
+        <span class="status-badge" style="margin-left:6px;color:var(--slate)">Free</span>
       </div>
       <div class="cta-row">
-        <button class="btn btn-primary" data-cart-title="DrivrHlthChkr" data-cart-id="drivrhlthchkr">Add to Cart — Free</button>
+        <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1h0D9eTKpvYXyitN8-SlUDzLNy8BnDmJ5">Download .exe — Free</a>
         <button class="btn icon-btn" data-wish-id="drivrhlthchkr" data-wish-title="DrivrHlthChkr">♡ Wishlist</button>
       </div>
     </div>
@@ -49,8 +72,118 @@
 
   <section>
     <h2>About this software</h2>
-    <p class="lede" style="max-width:62ch">A Python-based tool that checks your drivers and system software for available updates — completely free, and the source is yours to edit. Works on Windows 10–11, no extra packages required beyond Python itself.</p>
-    <a class="btn" href="https://killerwhalegne.pages.dev/projects/drivrhlthchkr">Full setup instructions →</a>
+    <p class="lede" style="max-width:64ch">KW Drivr Hlth Chkr (Driver Health Checker) is a Windows driver scanner. It looks over every device on your PC and tells you which drivers need attention, which are worth updating, and which are fine — with a plain-English reason for every call. Everything runs on your own machine, and it's free.</p>
+    <table class="spec-table">
+      <tr><td>Version</td><td>2</td></tr>
+      <tr><td>Platform</td><td>Windows 10 / 11</td></tr>
+      <tr><td>Price</td><td>Free</td></tr>
+      <tr><td>Size</td><td>~12 MB (standalone .exe)</td></tr>
+      <tr><td>Admin rights</td><td>Not required</td></tr>
+      <tr><td>Needs Python?</td><td>No — the .exe is fully self-contained</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Download</h2>
+    <p class="lede">Most people want the .exe. The source is there if you'd rather read it, edit it, or build it yourself.</p>
+    <div class="dl-grid">
+      <div class="card dl-card">
+        <h3>Standalone .exe <span class="status-badge status-live" style="margin-left:6px">Recommended</span></h3>
+        <p>One file. Click it and the app opens — nothing to install, no Python, no setup. Put it on your desktop or a USB stick and it works anywhere.</p>
+        <a class="btn btn-primary" href="https://drive.google.com/uc?export=download&id=1h0D9eTKpvYXyitN8-SlUDzLNy8BnDmJ5">Download DriverHealthChecker.exe</a>
+        <p class="fine">Download didn't start? <a href="https://drive.google.com/file/d/1h0D9eTKpvYXyitN8-SlUDzLNy8BnDmJ5/view?usp=sharing">Open it in Google Drive</a> and use the download button there.</p>
+      </div>
+      <div class="card dl-card">
+        <h3>Source code (.zip)</h3>
+        <p>The full project: <code>main.py</code>, the icon, a README, and the scripts to run it from source or build your own .exe. Needs Python 3.8+ if you want to run it from source.</p>
+        <a class="btn" href="https://drive.google.com/uc?export=download&id=1YnSTv92srsPZbonZQzRcHty7NaDrXW4B">Download source (.zip)</a>
+        <p class="fine">Trouble downloading? <a href="https://drive.google.com/file/d/1YnSTv92srsPZbonZQzRcHty7NaDrXW4B/view?usp=sharing">Open it in Google Drive</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to run it (the .exe)</h2>
+    <ol class="steps">
+      <li><strong>Download</strong> <code>DriverHealthChecker.exe</code> using the button above.</li>
+      <li><strong>Double-click it.</strong> That's the whole install — there isn't one. Save it wherever you like.</li>
+      <li><strong>If Windows says "Windows protected your PC,"</strong> click <strong>More info</strong>, then <strong>Run anyway</strong>. This is normal for the first run (see the note below).</li>
+      <li><strong>Wait for the scan.</strong> It starts automatically and takes about 30–90 seconds the first time.</li>
+      <li><strong>Read your results.</strong> Worst drivers are listed first.</li>
+    </ol>
+    <div class="callout" style="margin-top:18px">
+      <strong>Why does Windows warn me?</strong> The .exe isn't code-signed — that takes a paid certificate we don't have yet — so SmartScreen shows a caution screen for any unsigned app it hasn't seen much. Some antivirus tools are also jumpy about any app built with PyInstaller (the tool used to package it into a single .exe), and may flag it as a false positive. Nothing in it is hidden: the entire source is in the zip above, and you can build the .exe yourself from it.
+    </div>
+  </section>
+
+  <section>
+    <h2>Using the app</h2>
+    <ul class="plain">
+      <li><strong style="color:var(--ink)">Sort:</strong> click a column heading to sort, click again to reverse. Worst-first by default.</li>
+      <li><strong style="color:var(--ink)">Filter &amp; search:</strong> use the filter buttons and search box to narrow the list.</li>
+      <li><strong style="color:var(--ink)">Details:</strong> click a row to see its details, including a plain-English "Why this status." Double-click (or right-click → View Full Details) for the full popup.</li>
+      <li><strong style="color:var(--ink)">Right-click extras:</strong> search the driver online (opens your browser), or jump to Device Manager / Windows Update.</li>
+      <li><strong style="color:var(--ink)">Rescan:</strong> refreshes the results without restarting the app.</li>
+      <li><strong style="color:var(--ink)">Run as Admin:</strong> not needed — the scan only reads information any user can read. The button is in the top bar if you ever want it.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What the statuses mean</h2>
+    <div class="status-list">
+      <div class="status-row"><b>Update Necessary</b>Device Manager reports an error code, the driver is unsigned, or a device has no driver installed at all.</div>
+      <div class="status-row"><b>Update Suggested</b>Windows Update has a pending driver for that device, Windows is using the generic "Basic Display Adapter," or the driver is old — 5+ years for GPU, network, storage, audio, Bluetooth, and firmware; 7+ years for everything else.</div>
+      <div class="status-row"><b>Update Available</b>The driver is 3+ years old.</div>
+      <div class="status-row"><b>Up to Date</b>Nothing found.</div>
+    </div>
+    <p class="lede" style="margin-top:16px;max-width:64ch">Drivers that ship with Windows itself (Microsoft's own, "(Standard …)" devices, and anything with a built-in INF name) aren't flagged for age — they carry old dates like 2006, but Windows Update looks after them.</p>
+    <div class="callout">
+      <strong>Good to know:</strong> this is a smart heuristic, not a vendor lookup, so it can't promise a newer driver exists. For the most reliable results, use it alongside Windows Update and your PC or motherboard maker's support page. BIOS/UEFI is shown with its date, but Windows can't tell whether a newer one is out.
+    </div>
+  </section>
+
+  <section>
+    <h2>Privacy</h2>
+    <p class="lede" style="max-width:64ch">No account, no tracking, and nothing is sent to us. The scan reads your driver info locally. The only outside contact is Windows' own Windows Update search (the same one Windows uses), and the optional "search online" right-click, which just opens a web search in your browser.</p>
+  </section>
+
+  <section>
+    <h2>Run it from source instead</h2>
+    <ol class="steps">
+      <li>Install <a href="https://www.python.org/downloads/" style="color:var(--accent)">Python 3.8+</a>. Tick <strong>Add Python to PATH</strong> and keep <strong>tcl/tk and IDLE</strong> ticked.</li>
+      <li>Download and unzip the source above.</li>
+      <li>Double-click <code>Run_DriverHealthChecker.bat</code> (or run <code>py main.py</code>).</li>
+    </ol>
+    <p class="lede" style="margin-top:14px;max-width:64ch">Want your own .exe? Double-click <code>build_exe.bat</code> in the same folder — it installs PyInstaller and produces <code>DriverHealthChecker.exe</code> in a minute or so. No extra packages are needed to run the app itself; it only uses Python's standard library.</p>
+  </section>
+
+  <section>
+    <h2>If something goes wrong</h2>
+    <p class="lede" style="max-width:64ch">The app saves error details to <code>%LOCALAPPDATA%\KWDriverHealthChecker\error.log</code>. Paste that into your message on the <a href="/support" style="color:var(--accent)">Support page</a> and we can figure out what happened.</p>
+  </section>
+
+  <section>
+    <h2>What's new in v2</h2>
+    <p class="lede" style="margin-bottom:10px">Fixed</p>
+    <ul class="plain" style="margin-bottom:18px">
+      <li>Works properly as a packaged .exe (the old admin relaunch would have broken).</li>
+      <li>No more crash when searching if a driver had no provider listed.</li>
+      <li>Clicking a row now shows the right driver when several devices share a name (like the many "USB Root Hub" entries).</li>
+      <li>Windows' built-in drivers (dated 2006 and similar) are no longer all marked "Suggested."</li>
+      <li>Windows Update matching now uses hardware IDs and exact models, instead of loose word overlap that could flag every Intel device because of one pending update.</li>
+      <li>Device error codes are actually checked now, and devices with no driver installed show up too.</li>
+      <li>Non-English device names display correctly.</li>
+      <li>Windows Update failures (like being offline) are reported in the status bar instead of failing silently.</li>
+      <li>Version, date, and status sorting work properly (no more "10.0" sorting before "9.0").</li>
+      <li>"Search online" encodes the query correctly and no longer always says "Windows 11."</li>
+      <li>The window now uses the app icon, and the scan no longer touches the UI unsafely.</li>
+    </ul>
+    <p class="lede" style="margin-bottom:10px">Improved</p>
+    <ul class="plain">
+      <li>The scan runs its four queries in parallel, so it's noticeably faster.</li>
+      <li>Crisp on high-DPI screens, with a progress bar while scanning and your OS/model shown in the header.</li>
+      <li>A "Why this status" explanation for every item.</li>
+    </ul>
   </section>
 
   <section style="border-bottom:none">
