@@ -77,14 +77,16 @@ function initTagFilters(){
   });
 }
 function applyFilters(){
-  const activeTags = Array.from(document.querySelectorAll('.tag-chip.active')).map(c=>c.dataset.tag);
-  const activeCats = Array.from(document.querySelectorAll('.sidebar input[type="checkbox"]:checked')).map(c=>c.value);
-  document.querySelectorAll('.tile').forEach(tile=>{
-    const tags = (tile.dataset.tags||'').split(',');
-    const cat = tile.dataset.cat||'';
-    const tagOk = activeTags.length===0 || activeTags.some(t=>tags.includes(t));
-    const catOk = activeCats.length===0 || activeCats.includes(cat);
-    tile.style.display = (tagOk && catOk) ? '' : 'none';
+  // Within a filter group = OR, across groups = AND.
+  const selections = [];
+  document.querySelectorAll('.sidebar .filter-group').forEach(g=>{
+    const vals = Array.from(g.querySelectorAll('input[type="checkbox"]:checked')).map(c=>c.value)
+      .concat(Array.from(g.querySelectorAll('.tag-chip.active')).map(c=>c.dataset.tag));
+    if(vals.length) selections.push(vals);
+  });
+  document.querySelectorAll('.tile-grid .tile').forEach(tile=>{
+    const attrs = (tile.dataset.tags||'').split(',').concat([tile.dataset.cat||'']);
+    tile.style.display = selections.every(vals=>vals.some(v=>attrs.includes(v))) ? '' : 'none';
   });
 }
 

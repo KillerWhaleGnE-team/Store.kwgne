@@ -64,3 +64,11 @@
 .reviews-box{border:1px dashed var(--line);border-radius:10px;padding:22px;color:var(--slate);font-size:.9rem;text-align:center}
 
 @media(max-width:720px){.store-layout{grid-template-columns:1fr}.banner{height:200px}}
+
+/* ---- community picks ---- */
+.status-community{color:#E0B352;border-color:#3D3420}
+.spec-table{border-collapse:collapse;font-size:.9rem;color:var(--slate)}
+.spec-table td{padding:6px 24px 6px 0;vertical-align:top}
+.spec-table td:first-child{color:var(--ink);white-space:nowrap}
+.callout{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:14px 16px;background:var(--panel);color:var(--slate);font-size:.9rem;max-width:64ch}
+.callout strong{color:var(--ink)}
