@@ -39,7 +39,8 @@
         <span class="status-badge" style="margin-left:6px;color:var(--slate)">Open Source</span>
       </div>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.luanti.org/" target="_blank" rel="noopener">Get it from the official site ↗</a>
+        <a id="dl-btn" class="btn btn-primary" href="https://www.luanti.org/en/downloads" target="_blank" rel="noopener">Download for Windows</a>
+        <a class="btn" href="https://www.luanti.org/" target="_blank" rel="noopener">Official site ↗</a>
         <button class="btn icon-btn" data-wish-id="luanti" data-wish-title="Luanti">♡ Wishlist</button>
       </div>
     </div>
@@ -47,6 +48,13 @@
 
   <section>
     <div class="callout"><strong>Not made by KWG&amp;E.</strong> This is a community pick: free, open-source software we think is worth a look. We aren't affiliated with its authors, and the download comes straight from their official site.</div>
+    <p class="lede" style="margin:14px 0 0;max-width:64ch">The Download button grabs the latest Windows build straight from Luanti's GitHub releases. It's a portable .zip: extract it, then run <code>luanti.exe</code> inside the <code>bin</code> folder. On another system, or if anything goes wrong, it opens the official download page instead.</p>
+  </section>
+
+  <section>
+    <div class="gallery-main"><img id="main-shot" src="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.3.0-dry-green-jungle-biomes.jpg?width=960" alt="Screenshot" onerror="this.onerror=null;this.src='/assets/img/luanti.svg'"></div>
+    <div class="gallery-thumbs"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.3.0-dry-green-jungle-biomes.jpg?width=200" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.3.0-dry-green-jungle-biomes.jpg?width=960" alt="Screenshot 1" loading="lazy" onclick="document.getElementById('main-shot').src=this.dataset.full"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.3.0-snow-ice-biomes.jpg?width=200" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.3.0-snow-ice-biomes.jpg?width=960" alt="Screenshot 2" loading="lazy" onclick="document.getElementById('main-shot').src=this.dataset.full"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Luanti-5.14.0-content-browser.png?width=200" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Luanti-5.14.0-content-browser.png?width=960" alt="Screenshot 3" loading="lazy" onclick="document.getElementById('main-shot').src=this.dataset.full"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.5.0-join-game-screen.png?width=200" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.5.0-join-game-screen.png?width=960" alt="Screenshot 4" loading="lazy" onclick="document.getElementById('main-shot').src=this.dataset.full"></div>
+    <p class="gallery-caption">Screenshots of Luanti (formerly Minetest) via Wikimedia Commons. See each file's Commons page for its license.</p>
   </section>
 
   <section>
@@ -55,9 +63,10 @@
     <table class="spec-table">
       <tr><td>Made by</td><td>The Luanti Team and contributors</td></tr>
       <tr><td>License</td><td>Engine: LGPL-2.1 (or later). Shared media and data: CC BY-SA 3.0.</td></tr>
-      <tr><td>Platforms</td><td>Check the official site for current builds</td></tr>
+      <tr><td>Platforms</td><td>Windows, macOS, Linux, Android, FreeBSD</td></tr>
       <tr><td>Price</td><td>Free</td></tr>
-      <tr><td>Official site</td><td><a href="https://www.luanti.org/" target="_blank" rel="noopener" style="color:var(--accent)">luanti.org</a></td></tr>
+      <tr><td>Official site</td><td><a href="https://www.luanti.org/" target="_blank" rel="noopener" style="color:var(--accent)">www.luanti.org</a></td></tr>
+      <tr><td>Download page</td><td><a href="https://www.luanti.org/en/downloads" target="_blank" rel="noopener" style="color:var(--accent)">luanti.org/en/downloads</a></td></tr>
     </table>
   </section>
 
@@ -81,6 +90,44 @@
 <div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
 <div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
 <div class="toast" id="toast"></div>
+<script>
+// Direct download: finds the project's newest stable Windows build on GitHub at click time,
+// so the link never goes stale. Falls back to the official download page if anything fails.
+(function(){
+  var REPO = "luanti-org/luanti";
+  var PATTERN = /win64\.zip$/i;
+  var FALLBACK = "https://www.luanti.org/en/downloads";
+  var btn = document.getElementById('dl-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(e){
+    if(!/Windows/i.test(navigator.userAgent)){ return; }   // not Windows: let the link open the official page
+    e.preventDefault();
+    var original = btn.textContent;
+    btn.textContent = 'Finding latest version…';
+    fetch('https://api.github.com/repos/' + REPO + '/releases?per_page=15')
+      .then(function(r){ if(!r.ok) throw new Error('api ' + r.status); return r.json(); })
+      .then(function(releases){
+        for(var i=0;i<releases.length;i++){
+          var rel = releases[i];
+          if(rel.draft || rel.prerelease) continue;
+          for(var j=0;j<(rel.assets||[]).length;j++){
+            if(PATTERN.test(rel.assets[j].name)){ return rel.assets[j]; }
+          }
+        }
+        throw new Error('no matching file');
+      })
+      .then(function(asset){
+        btn.textContent = 'Starting download…';
+        window.location.href = asset.browser_download_url;
+        setTimeout(function(){ btn.textContent = original; }, 4000);
+      })
+      .catch(function(){
+        btn.textContent = original;
+        window.open(FALLBACK, '_blank', 'noopener');
+      });
+  });
+})();
+</script>
 <script src="/store.js"></script>
 </body>
 </html>

@@ -39,7 +39,8 @@
         <span class="status-badge" style="margin-left:6px;color:var(--slate)">Open Source</span>
       </div>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://supertuxkart.net" target="_blank" rel="noopener">Get it from the official site ↗</a>
+        <a id="dl-btn" class="btn btn-primary" href="https://supertuxkart.net/Download" target="_blank" rel="noopener">Download for Windows</a>
+        <a class="btn" href="https://supertuxkart.net" target="_blank" rel="noopener">Official site ↗</a>
         <button class="btn icon-btn" data-wish-id="supertuxkart" data-wish-title="SuperTuxKart">♡ Wishlist</button>
       </div>
     </div>
@@ -47,6 +48,13 @@
 
   <section>
     <div class="callout"><strong>Not made by KWG&amp;E.</strong> This is a community pick: free, open-source software we think is worth a look. We aren't affiliated with its authors, and the download comes straight from their official site.</div>
+    <p class="lede" style="margin:14px 0 0;max-width:64ch">The Download button grabs the latest Windows installer straight from SuperTuxKart's GitHub releases. It's a big file, around 700 MB. On another system, or if anything goes wrong, it opens the official download page instead.</p>
+  </section>
+
+  <section>
+    <div class="gallery-main"><img id="main-shot" src="https://commons.wikimedia.org/wiki/Special:FilePath/SuperTuxKart_0.8_screenshot.jpg?width=960" alt="Screenshot" onerror="this.onerror=null;this.src='/assets/img/stk.svg'"></div>
+    <div class="gallery-thumbs"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/SuperTuxKart_0.8_screenshot.jpg?width=200" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/SuperTuxKart_0.8_screenshot.jpg?width=960" alt="Screenshot 1" loading="lazy" onclick="document.getElementById('main-shot').src=this.dataset.full"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Supertuxkart-0.9-screenshot-2.jpg?width=200" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Supertuxkart-0.9-screenshot-2.jpg?width=960" alt="Screenshot 2" loading="lazy" onclick="document.getElementById('main-shot').src=this.dataset.full"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Supertuxkart-0.8.1-screenshot-3.png?width=200" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Supertuxkart-0.8.1-screenshot-3.png?width=960" alt="Screenshot 3" loading="lazy" onclick="document.getElementById('main-shot').src=this.dataset.full"></div>
+    <p class="gallery-caption">Screenshots: SuperTuxKart development team, via Wikimedia Commons. These are older versions, so the current game looks newer. See each file's Commons page for its license.</p>
   </section>
 
   <section>
@@ -55,9 +63,10 @@
     <table class="spec-table">
       <tr><td>Made by</td><td>The SuperTuxKart team and community</td></tr>
       <tr><td>License</td><td>Code: GPL-3.0 (or later). Art, sound and music: a mix of GPL, CC BY, CC BY-SA, and public domain.</td></tr>
-      <tr><td>Platforms</td><td>Check the official site for current builds</td></tr>
+      <tr><td>Platforms</td><td>Windows, macOS, Linux, Android. The desktop downloads are large, around 700 MB.</td></tr>
       <tr><td>Price</td><td>Free</td></tr>
       <tr><td>Official site</td><td><a href="https://supertuxkart.net" target="_blank" rel="noopener" style="color:var(--accent)">supertuxkart.net</a></td></tr>
+      <tr><td>Download page</td><td><a href="https://supertuxkart.net/Download" target="_blank" rel="noopener" style="color:var(--accent)">supertuxkart.net/Download</a></td></tr>
     </table>
   </section>
 
@@ -81,6 +90,44 @@
 <div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
 <div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
 <div class="toast" id="toast"></div>
+<script>
+// Direct download: finds the project's newest stable Windows build on GitHub at click time,
+// so the link never goes stale. Falls back to the official download page if anything fails.
+(function(){
+  var REPO = "supertuxkart/stk-code";
+  var PATTERN = /installer.*(x86_64|x64|64).*\.exe$/i;
+  var FALLBACK = "https://supertuxkart.net/Download";
+  var btn = document.getElementById('dl-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(e){
+    if(!/Windows/i.test(navigator.userAgent)){ return; }   // not Windows: let the link open the official page
+    e.preventDefault();
+    var original = btn.textContent;
+    btn.textContent = 'Finding latest version…';
+    fetch('https://api.github.com/repos/' + REPO + '/releases?per_page=15')
+      .then(function(r){ if(!r.ok) throw new Error('api ' + r.status); return r.json(); })
+      .then(function(releases){
+        for(var i=0;i<releases.length;i++){
+          var rel = releases[i];
+          if(rel.draft || rel.prerelease) continue;
+          for(var j=0;j<(rel.assets||[]).length;j++){
+            if(PATTERN.test(rel.assets[j].name)){ return rel.assets[j]; }
+          }
+        }
+        throw new Error('no matching file');
+      })
+      .then(function(asset){
+        btn.textContent = 'Starting download…';
+        window.location.href = asset.browser_download_url;
+        setTimeout(function(){ btn.textContent = original; }, 4000);
+      })
+      .catch(function(){
+        btn.textContent = original;
+        window.open(FALLBACK, '_blank', 'noopener');
+      });
+  });
+})();
+</script>
 <script src="/store.js"></script>
 </body>
 </html>

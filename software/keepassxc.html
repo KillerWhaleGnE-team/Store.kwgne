@@ -39,7 +39,8 @@
         <span class="status-badge" style="margin-left:6px;color:var(--slate)">Open Source</span>
       </div>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://keepassxc.org/download" target="_blank" rel="noopener">Get it from the official site ↗</a>
+        <a id="dl-btn" class="btn btn-primary" href="https://keepassxc.org/download" target="_blank" rel="noopener">Download for Windows</a>
+        <a class="btn" href="https://keepassxc.org/" target="_blank" rel="noopener">Official site ↗</a>
         <button class="btn icon-btn" data-wish-id="keepassxc" data-wish-title="KeePassXC">♡ Wishlist</button>
       </div>
     </div>
@@ -47,6 +48,12 @@
 
   <section>
     <div class="callout"><strong>Not made by KWG&amp;E.</strong> This is a community pick: free, open-source software we think is worth a look. We aren't affiliated with its authors, and the download comes straight from their official site.</div>
+    <p class="lede" style="margin:14px 0 0;max-width:64ch">The Download button grabs the latest Windows installer (.msi) straight from KeePassXC's GitHub releases. On macOS or Linux, or if anything goes wrong, it opens the official download page instead.</p>
+  </section>
+
+  <section>
+    <div class="gallery-main"><img src="/assets/img/keepass.svg" alt="Illustration"></div>
+    <p class="gallery-caption">Illustration. See the official site for screenshots.</p>
   </section>
 
   <section>
@@ -57,7 +64,8 @@
       <tr><td>License</td><td>GPL-2.0 / GPL-3.0</td></tr>
       <tr><td>Platforms</td><td>Windows, macOS, Linux</td></tr>
       <tr><td>Price</td><td>Free</td></tr>
-      <tr><td>Official site</td><td><a href="https://keepassxc.org/download" target="_blank" rel="noopener" style="color:var(--accent)">keepassxc.org</a></td></tr>
+      <tr><td>Official site</td><td><a href="https://keepassxc.org/" target="_blank" rel="noopener" style="color:var(--accent)">keepassxc.org</a></td></tr>
+      <tr><td>Download page</td><td><a href="https://keepassxc.org/download" target="_blank" rel="noopener" style="color:var(--accent)">keepassxc.org/download</a></td></tr>
     </table>
   </section>
 
@@ -81,6 +89,44 @@
 <div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
 <div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
 <div class="toast" id="toast"></div>
+<script>
+// Direct download: finds the project's newest stable Windows build on GitHub at click time,
+// so the link never goes stale. Falls back to the official download page if anything fails.
+(function(){
+  var REPO = "keepassxreboot/keepassxc";
+  var PATTERN = /Win64\.msi$/i;
+  var FALLBACK = "https://keepassxc.org/download";
+  var btn = document.getElementById('dl-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(e){
+    if(!/Windows/i.test(navigator.userAgent)){ return; }   // not Windows: let the link open the official page
+    e.preventDefault();
+    var original = btn.textContent;
+    btn.textContent = 'Finding latest version…';
+    fetch('https://api.github.com/repos/' + REPO + '/releases?per_page=15')
+      .then(function(r){ if(!r.ok) throw new Error('api ' + r.status); return r.json(); })
+      .then(function(releases){
+        for(var i=0;i<releases.length;i++){
+          var rel = releases[i];
+          if(rel.draft || rel.prerelease) continue;
+          for(var j=0;j<(rel.assets||[]).length;j++){
+            if(PATTERN.test(rel.assets[j].name)){ return rel.assets[j]; }
+          }
+        }
+        throw new Error('no matching file');
+      })
+      .then(function(asset){
+        btn.textContent = 'Starting download…';
+        window.location.href = asset.browser_download_url;
+        setTimeout(function(){ btn.textContent = original; }, 4000);
+      })
+      .catch(function(){
+        btn.textContent = original;
+        window.open(FALLBACK, '_blank', 'noopener');
+      });
+  });
+})();
+</script>
 <script src="/store.js"></script>
 </body>
 </html>

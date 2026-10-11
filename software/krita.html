@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874053" data-cfasync="false" async></script>
+<script>(function(s){s.dataset.zone='11874070',s.src='https://n6wxm.com/vignette.min.js'}([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script'))))</script>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874065" data-cfasync="false" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Krita — KWG&amp;E Store</title>
+<meta name="description" content="Krita: free, open-source digital painting software.">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/store.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="store-top">
+    <a class="wordmark" href="/"><img src="/assets/logo.jpg" alt="KillerWhale G&E logo">KillerWhale G&amp;E</a>
+    <nav class="store-tabs">
+      <a href="/">Home</a>
+      <a href="/software" class="active">Software</a>
+      <a href="/books">Books</a>
+      <a href="/services">Services</a>
+      <a href="/merch">Merch</a>
+      <a href="/support">Support</a>
+    </nav>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" onclick="openDrawer('wishlist-drawer')">♡ Wishlist<span id="wishlist-count" class="icon-count">0</span></button>
+      <button class="icon-btn" onclick="openDrawer('cart-drawer')">Cart</button>
+    </div>
+  </header>
+
+  <section>
+    <p style="color:var(--slate);font-size:.85rem;margin:18px 0 0"><a href="/software" style="color:var(--slate);text-decoration:none">← Software</a></p>
+    <div class="product-head" style="margin-top:14px">
+      <div>
+        <h1 style="margin:0 0 6px;font-size:1.8rem">Krita</h1>
+        <span class="status-badge status-community">Community Pick</span>
+        <span class="status-badge" style="margin-left:6px;color:var(--slate)">Free</span>
+        <span class="status-badge" style="margin-left:6px;color:var(--slate)">Open Source</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://krita.org/en/download/" target="_blank" rel="noopener">Download (official page) ↗</a>
+        <a class="btn" href="https://krita.org/" target="_blank" rel="noopener">Official site ↗</a>
+        <button class="btn icon-btn" data-wish-id="krita" data-wish-title="Krita">♡ Wishlist</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="callout"><strong>Not made by KWG&amp;E.</strong> This is a community pick: free, open-source software we think is worth a look. We aren't affiliated with its authors, and the download comes straight from their official site.</div>
+    <p class="lede" style="margin:14px 0 0;max-width:64ch">Krita is distributed from its own website, so the Download button opens the official download page, where you pick your system.</p>
+  </section>
+
+  <section>
+    <div class="gallery-main"><img src="/assets/img/krita.svg" alt="Illustration"></div>
+    <p class="gallery-caption">Illustration. See the official site for screenshots.</p>
+  </section>
+
+  <section>
+    <h2>About this software</h2>
+    <p class="lede" style="max-width:64ch">A free digital painting program built for artists, with a large set of brushes, layers, and animation tools. It's made by the community and runs on the main desktop systems.</p>
+    <table class="spec-table">
+      <tr><td>Made by</td><td>The Krita Foundation and KDE community</td></tr>
+      <tr><td>License</td><td>GPL-3.0 (or later)</td></tr>
+      <tr><td>Platforms</td><td>Windows, macOS, Linux</td></tr>
+      <tr><td>Price</td><td>Free</td></tr>
+      <tr><td>Official site</td><td><a href="https://krita.org/" target="_blank" rel="noopener" style="color:var(--accent)">krita.org</a></td></tr>
+      <tr><td>Download page</td><td><a href="https://krita.org/en/download/" target="_blank" rel="noopener" style="color:var(--accent)">krita.org/en/download</a></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Credit and license</h2>
+    <p class="lede" style="max-width:64ch">Krita is developed by its community under the GPL. It's also sold in some app stores to fund development, but the free download is on the official site. Platform availability changes over time, so check the official site for the builds that are current.</p>
+  </section>
+
+  <section style="border-bottom:none">
+    <h2>Reviews</h2>
+    <div class="reviews-box">No reviews yet.</div>
+  </section>
+
+  <footer>
+    <span>© 2026 KillerWhale G&amp;E</span>
+    <span><a href="/support" style="text-decoration:none;color:var(--slate)">Need help? →</a></span>
+  </footer>
+</div>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
+<div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
+<div class="toast" id="toast"></div>
+<script src="/store.js"></script>
+</body>
+</html>

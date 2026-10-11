@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874053" data-cfasync="false" async></script>
+<script>(function(s){s.dataset.zone='11874070',s.src='https://n6wxm.com/vignette.min.js'}([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script'))))</script>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11874065" data-cfasync="false" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>7-Zip — KWG&amp;E Store</title>
+<meta name="description" content="7-Zip: a free, open-source file archiver.">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/store.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="store-top">
+    <a class="wordmark" href="/"><img src="/assets/logo.jpg" alt="KillerWhale G&E logo">KillerWhale G&amp;E</a>
+    <nav class="store-tabs">
+      <a href="/">Home</a>
+      <a href="/software" class="active">Software</a>
+      <a href="/books">Books</a>
+      <a href="/services">Services</a>
+      <a href="/merch">Merch</a>
+      <a href="/support">Support</a>
+    </nav>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" onclick="openDrawer('wishlist-drawer')">♡ Wishlist<span id="wishlist-count" class="icon-count">0</span></button>
+      <button class="icon-btn" onclick="openDrawer('cart-drawer')">Cart</button>
+    </div>
+  </header>
+
+  <section>
+    <p style="color:var(--slate);font-size:.85rem;margin:18px 0 0"><a href="/software" style="color:var(--slate);text-decoration:none">← Software</a></p>
+    <div class="product-head" style="margin-top:14px">
+      <div>
+        <h1 style="margin:0 0 6px;font-size:1.8rem">7-Zip</h1>
+        <span class="status-badge status-community">Community Pick</span>
+        <span class="status-badge" style="margin-left:6px;color:var(--slate)">Free</span>
+        <span class="status-badge" style="margin-left:6px;color:var(--slate)">Open Source</span>
+      </div>
+      <div class="cta-row">
+        <a id="dl-btn" class="btn btn-primary" href="https://www.7-zip.org/download.html" target="_blank" rel="noopener">Download for Windows</a>
+        <a class="btn" href="https://www.7-zip.org/" target="_blank" rel="noopener">Official site ↗</a>
+        <button class="btn icon-btn" data-wish-id="7-zip" data-wish-title="7-Zip">♡ Wishlist</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="callout"><strong>Not made by KWG&amp;E.</strong> This is a community pick: free, open-source software we think is worth a look. We aren't affiliated with its authors, and the download comes straight from their official site.</div>
+    <p class="lede" style="margin:14px 0 0;max-width:64ch">The Download button grabs the latest 64-bit Windows installer straight from the 7-Zip GitHub releases. If anything goes wrong, it opens the official download page instead.</p>
+  </section>
+
+  <section>
+    <div class="gallery-main"><img src="/assets/img/sevenzip.svg" alt="Illustration"></div>
+    <p class="gallery-caption">Illustration. See the official site for screenshots.</p>
+  </section>
+
+  <section>
+    <h2>About this software</h2>
+    <p class="lede" style="max-width:64ch">A free file archiver that opens and creates a wide range of formats, including its own high-compression 7z format and ZIP. It's small, fast, and has been a Windows staple for years.</p>
+    <table class="spec-table">
+      <tr><td>Made by</td><td>Igor Pavlov</td></tr>
+      <tr><td>License</td><td>Mostly GNU LGPL, with a restriction on the unRAR code and some BSD-licensed parts. See the official license page.</td></tr>
+      <tr><td>Platforms</td><td>Windows (command-line versions exist for other systems)</td></tr>
+      <tr><td>Price</td><td>Free</td></tr>
+      <tr><td>Official site</td><td><a href="https://www.7-zip.org/" target="_blank" rel="noopener" style="color:var(--accent)">7-zip.org</a></td></tr>
+      <tr><td>Download page</td><td><a href="https://www.7-zip.org/download.html" target="_blank" rel="noopener" style="color:var(--accent)">7-zip.org/download.html</a></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Credit and license</h2>
+    <p class="lede" style="max-width:64ch">7-Zip is written by Igor Pavlov. Its license is a mix of terms, so read the license page on the official site before redistributing it. Platform availability changes over time, so check the official site for the builds that are current.</p>
+  </section>
+
+  <section style="border-bottom:none">
+    <h2>Reviews</h2>
+    <div class="reviews-box">No reviews yet.</div>
+  </section>
+
+  <footer>
+    <span>© 2026 KillerWhale G&amp;E</span>
+    <span><a href="/support" style="text-decoration:none;color:var(--slate)">Need help? →</a></span>
+  </footer>
+</div>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
+<div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
+<div class="toast" id="toast"></div>
+<script>
+// Direct download: finds the project's newest stable Windows build on GitHub at click time,
+// so the link never goes stale. Falls back to the official download page if anything fails.
+(function(){
+  var REPO = "ip7z/7zip";
+  var PATTERN = /^7z\d+-x64\.exe$/i;
+  var FALLBACK = "https://www.7-zip.org/download.html";
+  var btn = document.getElementById('dl-btn');
+  if(!btn) return;
+  btn.addEventListener('click', function(e){
+    if(!/Windows/i.test(navigator.userAgent)){ return; }
+    e.preventDefault();
+    var original = btn.textContent;
+    btn.textContent = 'Finding latest version…';
+    fetch('https://api.github.com/repos/' + REPO + '/releases?per_page=15')
+      .then(function(r){ if(!r.ok) throw new Error('api ' + r.status); return r.json(); })
+      .then(function(releases){
+        for(var i=0;i<releases.length;i++){
+          var rel = releases[i];
+          if(rel.draft || rel.prerelease) continue;
+          for(var j=0;j<(rel.assets||[]).length;j++){
+            if(PATTERN.test(rel.assets[j].name)){ return rel.assets[j]; }
+          }
+        }
+        throw new Error('no matching file');
+      })
+      .then(function(asset){
+        btn.textContent = 'Starting download…';
+        window.location.href = asset.browser_download_url;
+        setTimeout(function(){ btn.textContent = original; }, 4000);
+      })
+      .catch(function(){
+        btn.textContent = original;
+        window.open(FALLBACK, '_blank', 'noopener');
+      });
+  });
+})();
+</script>
+<script src="/store.js"></script>
+</body>
+</html>
