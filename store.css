@@ -72,3 +72,11 @@
 .spec-table td:first-child{color:var(--ink);white-space:nowrap}
 .callout{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:14px 16px;background:var(--panel);color:var(--slate);font-size:.9rem;max-width:64ch}
 .callout strong{color:var(--ink)}
+
+/* ---- images ---- */
+.tile-thumb{overflow:hidden}
+.tile-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-main{overflow:hidden}
+.gallery-main img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-thumbs img{width:90px;aspect-ratio:16/9;object-fit:cover;border-radius:6px;border:1px solid var(--line);cursor:pointer}
+.gallery-caption{font-size:.78rem;color:var(--slate);margin:8px 0 0;max-width:70ch}

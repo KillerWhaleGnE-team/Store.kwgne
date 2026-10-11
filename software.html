@@ -29,11 +29,11 @@
   </header>
 
   <div class="banner">
-    <div class="banner-slide show"><h2>Who&amp;Why: Fading Echoes</h2><p>Play the current build free, right now.</p><a class="btn btn-primary" href="/software/who-and-why">View project</a></div>
-    <div class="banner-slide"><h2>What&amp;Where</h2><p>A 3D prequel detective story, built in Unity.</p><a class="btn btn-primary" href="/software/what-and-where">View project</a></div>
-    <div class="banner-slide"><h2>DrivrHlthChkr</h2><p>Free Windows driver &amp; update checker.</p><a class="btn btn-primary" href="/software/drivrhlthchkr">Download</a></div>
-    <div class="banner-slide"><h2>Nightmare Mart</h2><p>Escape the mall. Uncover the lore. Survive.</p><a class="btn btn-primary" href="/software/nightmare-mart">View project</a></div>
-    <div class="banner-slide"><h2>Community Picks</h2><p>Free, open-source games and tools we like, linked straight from their official sites.</p><a class="btn btn-primary" href="/software/supertuxkart">Start with SuperTuxKart</a></div>
+    <div class="banner-slide show" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 30%,rgba(7,11,18,.2)),url('/assets/img/whoandwhy.svg');background-size:cover;background-position:center"><h2>Who&amp;Why: Fading Echoes</h2><p>Play the current build free, right now.</p><a class="btn btn-primary" href="/software/who-and-why">View project</a></div>
+    <div class="banner-slide" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 30%,rgba(7,11,18,.2)),url('/assets/img/whatandwhere.svg');background-size:cover;background-position:center"><h2>What&amp;Where</h2><p>A 3D prequel detective story, built in Unity.</p><a class="btn btn-primary" href="/software/what-and-where">View project</a></div>
+    <div class="banner-slide" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 30%,rgba(7,11,18,.2)),url('/assets/img/drivr.svg');background-size:cover;background-position:center"><h2>DrivrHlthChkr</h2><p>Free Windows driver &amp; update checker.</p><a class="btn btn-primary" href="/software/drivrhlthchkr">Download</a></div>
+    <div class="banner-slide" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 30%,rgba(7,11,18,.2)),url('/assets/img/nightmaremart.svg');background-size:cover;background-position:center"><h2>Nightmare Mart</h2><p>Escape the mall. Uncover the lore. Survive.</p><a class="btn btn-primary" href="/software/nightmare-mart">View project</a></div>
+    <div class="banner-slide" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 30%,rgba(7,11,18,.2)),url('/assets/img/community.svg');background-size:cover;background-position:center"><h2>Community Picks</h2><p>Free, open-source games and tools we like, linked straight from their official sites.</p><a class="btn btn-primary" href="/software/supertuxkart">Start with SuperTuxKart</a></div>
     <button class="banner-arrow prev">‹</button>
     <button class="banner-arrow next">›</button>
     <div class="banner-dots"></div>
@@ -67,45 +67,79 @@
           <span class="tag-chip" data-tag="racing">Racing</span>
           <span class="tag-chip" data-tag="sandbox">Sandbox</span>
           <span class="tag-chip" data-tag="utility">Utility</span>
+          <span class="tag-chip" data-tag="creative">Creative</span>
+          <span class="tag-chip" data-tag="space">Space</span>
         </div>
       </aside>
 
       <div class="tile-grid">
         <a class="tile" href="/software/drivrhlthchkr" data-cat="app" data-tags="free,kwge,utility">
-          <div class="tile-thumb">DrivrHlthChkr</div>
+          <div class="tile-thumb"><img src="/assets/img/drivr.svg" alt="DrivrHlthChkr" loading="lazy"></div>
           <div class="tile-body"><h3>DrivrHlthChkr</h3><div class="tile-meta"><span class="status-badge status-live">Live</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/who-and-why" data-cat="game" data-tags="free,kwge,mystery,interactive-fiction">
-          <div class="tile-thumb">Who&amp;Why</div>
+          <div class="tile-thumb"><img src="/assets/img/whoandwhy.svg" alt="Who&amp;Why" loading="lazy"></div>
           <div class="tile-body"><h3>Who&amp;Why: Fading Echoes</h3><div class="tile-meta"><span class="status-badge status-dev">In Dev</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/what-and-where" data-cat="game" data-tags="free,kwge,mystery,3d">
-          <div class="tile-thumb">What&amp;Where</div>
+          <div class="tile-thumb"><img src="/assets/img/whatandwhere.svg" alt="What&amp;Where" loading="lazy"></div>
           <div class="tile-body"><h3>What&amp;Where</h3><div class="tile-meta"><span class="status-badge status-dev">In Dev</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/nightmare-mart" data-cat="game" data-tags="free,kwge,horror">
-          <div class="tile-thumb">Nightmare Mart</div>
+          <div class="tile-thumb"><img src="/assets/img/nightmaremart.svg" alt="Nightmare Mart" loading="lazy"></div>
           <div class="tile-body"><h3>Nightmare Mart</h3><div class="tile-meta"><span class="status-badge status-planned">Planned</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/supertuxkart" data-cat="game" data-tags="free,opensource,community,racing">
-          <div class="tile-thumb">SuperTuxKart</div>
+          <div class="tile-thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/SuperTuxKart_0.8_screenshot.jpg?width=480" alt="SuperTuxKart" loading="lazy" onerror="this.onerror=null;this.src='/assets/img/stk.svg'"></div>
           <div class="tile-body"><h3>SuperTuxKart</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/luanti" data-cat="game" data-tags="free,opensource,community,sandbox">
-          <div class="tile-thumb">Luanti</div>
+          <div class="tile-thumb"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minetest-5.3.0-dry-green-jungle-biomes.jpg?width=480" alt="Luanti" loading="lazy" onerror="this.onerror=null;this.src='/assets/img/luanti.svg'"></div>
           <div class="tile-body"><h3>Luanti</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/wesnoth" data-cat="game" data-tags="free,opensource,community,strategy">
-          <div class="tile-thumb">The Battle for Wesnoth</div>
+          <div class="tile-thumb"><img src="https://www.wesnoth.org/images/sshots/wesnoth-1.16.0-1.jpg" alt="The Battle for Wesnoth" loading="lazy" onerror="this.onerror=null;this.src='/assets/img/wesnoth.svg'"></div>
           <div class="tile-body"><h3>The Battle for Wesnoth</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/notepad-plus-plus" data-cat="app" data-tags="free,opensource,community,utility">
-          <div class="tile-thumb">Notepad++</div>
+          <div class="tile-thumb"><img src="/assets/img/notepad.svg" alt="Notepad++" loading="lazy"></div>
           <div class="tile-body"><h3>Notepad++</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
         </a>
         <a class="tile" href="/software/keepassxc" data-cat="app" data-tags="free,opensource,community,utility">
-          <div class="tile-thumb">KeePassXC</div>
+          <div class="tile-thumb"><img src="/assets/img/keepass.svg" alt="KeePassXC" loading="lazy"></div>
           <div class="tile-body"><h3>KeePassXC</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/sharex" data-cat="app" data-tags="free,opensource,community,utility">
+          <div class="tile-thumb"><img src="/assets/img/sharex.svg" alt="ShareX" loading="lazy"></div>
+          <div class="tile-body"><h3>ShareX</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/powertoys" data-cat="app" data-tags="free,opensource,community,utility">
+          <div class="tile-thumb"><img src="/assets/img/powertoys.svg" alt="PowerToys" loading="lazy"></div>
+          <div class="tile-body"><h3>PowerToys</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/obs-studio" data-cat="app" data-tags="free,opensource,community,creative">
+          <div class="tile-thumb"><img src="/assets/img/obs.svg" alt="OBS Studio" loading="lazy"></div>
+          <div class="tile-body"><h3>OBS Studio</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/7-zip" data-cat="app" data-tags="free,opensource,community,utility">
+          <div class="tile-thumb"><img src="/assets/img/sevenzip.svg" alt="7-Zip" loading="lazy"></div>
+          <div class="tile-body"><h3>7-Zip</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/blender" data-cat="app" data-tags="free,opensource,community,creative">
+          <div class="tile-thumb"><img src="/assets/img/blender.svg" alt="Blender" loading="lazy"></div>
+          <div class="tile-body"><h3>Blender</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/krita" data-cat="app" data-tags="free,opensource,community,creative">
+          <div class="tile-thumb"><img src="/assets/img/krita.svg" alt="Krita" loading="lazy"></div>
+          <div class="tile-body"><h3>Krita</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/endless-sky" data-cat="game" data-tags="free,opensource,community,space">
+          <div class="tile-thumb"><img src="/assets/img/endlesssky.svg" alt="Endless Sky" loading="lazy"></div>
+          <div class="tile-body"><h3>Endless Sky</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
+        </a>
+        <a class="tile" href="/software/mindustry" data-cat="game" data-tags="free,opensource,community,strategy">
+          <div class="tile-thumb"><img src="/assets/img/mindustry.svg" alt="Mindustry" loading="lazy"></div>
+          <div class="tile-body"><h3>Mindustry</h3><div class="tile-meta"><span class="status-badge status-community">Community Pick</span><span>Free</span></div></div>
         </a>
       </div>
     </div>
