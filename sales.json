@@ -1,0 +1,57 @@
+{
+  "updated": "2026-10-12",
+  "sales": [
+    {
+      "id": "steam-autumn-2026",
+      "title": "Steam Autumn Sale",
+      "type": "steam",
+      "start": "2026-10-01",
+      "end": "2026-10-08",
+      "tentative": false,
+      "store": "Steam",
+      "summary": "Steam's storewide autumn seasonal sale.",
+      "details": "Valve moved the Autumn Sale from late November to early October starting in 2025.",
+      "items": "",
+      "link": "https://store.steampowered.com/"
+    },
+    {
+      "id": "steam-winter-2026",
+      "title": "Steam Winter Sale",
+      "type": "steam",
+      "start": "2026-12-17",
+      "end": "2027-01-04",
+      "tentative": false,
+      "store": "Steam",
+      "summary": "Steam's big storewide winter sale, and the last major seasonal sale of 2026.",
+      "details": "Dates come from Valve's published event schedule.",
+      "items": "",
+      "link": "https://store.steampowered.com/"
+    },
+    {
+      "id": "steam-spring-2027",
+      "title": "Steam Spring Sale",
+      "type": "steam",
+      "start": "2027-03-18",
+      "end": "2027-03-25",
+      "tentative": true,
+      "store": "Steam",
+      "summary": "Steam's storewide spring seasonal sale.",
+      "details": "Dates come from Valve's published schedule, but Valve can still change them.",
+      "items": "",
+      "link": "https://store.steampowered.com/"
+    },
+    {
+      "id": "steam-summer-2027",
+      "title": "Steam Summer Sale",
+      "type": "steam",
+      "start": "2027-06-24",
+      "end": "2027-07-08",
+      "tentative": true,
+      "store": "Steam",
+      "summary": "Steam's big storewide summer sale.",
+      "details": "Dates come from Valve's published schedule, but Valve can still change them.",
+      "items": "",
+      "link": "https://store.steampowered.com/"
+    }
+  ]
+}

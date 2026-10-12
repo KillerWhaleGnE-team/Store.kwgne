@@ -21,6 +21,7 @@
       <a href="/books">Books</a>
       <a href="/services">Services</a>
       <a href="/merch">Merch</a>
+      <a href="/calendar">The Calendar</a>
       <a href="/support">Support</a>
     </nav>
     <div style="display:flex;gap:8px">
@@ -39,6 +40,8 @@
     <button class="banner-arrow next">›</button>
     <div class="banner-dots"></div>
   </div>
+
+  <a id="sale-strip" class="sale-strip" href="/calendar" hidden></a>
 
   <section>
     <div class="section-head"><h2>Software</h2><a href="/software">View all →</a></div>
@@ -104,6 +107,7 @@
 <div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
 <div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
 <div class="toast" id="toast"></div>
+<script src="/calendar.js"></script>
 <script src="/store.js"></script>
 </body>
 </html>
