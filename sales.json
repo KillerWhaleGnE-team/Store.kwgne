@@ -52,6 +52,19 @@
       "details": "Dates come from Valve's published schedule, but Valve can still change them.",
       "items": "",
       "link": "https://store.steampowered.com/"
+    },
+    {
+      "id": "kwgne-anniversary-sale-2029-11-13",
+      "title": "KWGnE anniversary sale",
+      "type": "kwge",
+      "start": "2029-11-13",
+      "end": "2029-11-13",
+      "tentative": true,
+      "store": "",
+      "summary": "Various discounts across all products",
+      "details": "KillerWhale Games and Entertainment was founded on the 13th of November 2023\nWe're celebrating our 3rd year anniversary with our first ever sale!!",
+      "items": "Everything",
+      "link": ""
     }
   ]
 }
