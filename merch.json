@@ -1,0 +1,7 @@
+{
+  "updated": "2026-10-12",
+  "items": [
+    { "id": "mig-27-sticker",     "name": "MiG-27 sticker",     "price": 4, "currency": "USD", "stock": 1 },
+    { "id": "mi-24-hind-sticker", "name": "Mi-24 Hind sticker", "price": 2, "currency": "USD", "stock": 4 }
+  ]
+}

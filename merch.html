@@ -30,7 +30,8 @@
   </header>
 
   <div class="banner">
-    <div class="banner-slide show" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 30%,rgba(7,11,18,.2)),url('/assets/img/merch.svg');background-size:cover;background-position:center"><h2>Merch is in design</h2><p>Nothing to show yet — check back soon.</p><a class="btn btn-primary" href="/support">Suggest something</a></div>
+    <div class="banner-slide show" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 32%,rgba(7,11,18,.2)),url('/assets/img/merch/mig27.jpg');background-size:cover;background-position:center"><h2>Aircraft stickers</h2><p>Cut-to-shape stickers, limited stock. Ask for one in our Discord.</p><a class="btn btn-primary" href="/merch/mig-27-sticker">See the MiG-27</a></div>
+    <div class="banner-slide" style="background-image:linear-gradient(90deg,rgba(7,11,18,.94) 32%,rgba(7,11,18,.2)),url('/assets/img/merch/mi24.jpg');background-size:cover;background-position:center"><h2>Mi-24 Hind</h2><p>Small camo helicopter stickers, sold one at a time.</p><a class="btn btn-primary" href="/merch/mi-24-hind-sticker">See the Hind</a></div>
     <button class="banner-arrow prev">‹</button>
     <button class="banner-arrow next">›</button>
     <div class="banner-dots"></div>
@@ -41,21 +42,28 @@
       <aside class="sidebar">
         <div class="filter-group">
           <h4>Type</h4>
-          <label><input type="checkbox" value="apparel"> Apparel</label>
-          <label><input type="checkbox" value="accessory"> Accessories</label>
+          <label><input type="checkbox" value="sticker"> Stickers</label>
         </div>
         <div class="filter-group">
           <h4>Price</h4>
-          <label><input type="checkbox" value="low"> Under $20</label>
+          <label><input type="checkbox" value="low"> Under $5</label>
         </div>
         <div class="filter-group">
           <h4>Tags</h4>
-          <span class="tag-chip" data-tag="logo">Logo Wear</span>
-          <span class="tag-chip" data-tag="omniverse">Omniverse</span>
+          <span class="tag-chip" data-tag="aircraft">Aircraft</span>
+          <span class="tag-chip" data-tag="jet">Jet</span>
+          <span class="tag-chip" data-tag="helicopter">Helicopter</span>
         </div>
       </aside>
       <div class="tile-grid">
-        <div class="tile"><div class="tile-thumb"><img src="/assets/img/merch.svg" alt="merch" loading="lazy"></div><div class="tile-body"><h3>Nothing listed yet</h3><div class="tile-meta"><span>Check back soon</span></div></div></div>
+        <a class="tile" href="/merch/mig-27-sticker" data-cat="sticker" data-tags="low,aircraft,jet">
+          <div class="tile-thumb"><img src="/assets/img/merch/mig27-640.jpg" alt="MiG-27 sticker" loading="lazy"></div>
+          <div class="tile-body"><h3>MiG-27 Sticker</h3><div class="tile-meta"><span class="status-badge status-dev" data-stock-badge="mig-27-sticker">Only 1 left</span><span data-price="mig-27-sticker">$4.00</span></div></div>
+        </a>
+        <a class="tile" href="/merch/mi-24-hind-sticker" data-cat="sticker" data-tags="low,aircraft,helicopter">
+          <div class="tile-thumb"><img src="/assets/img/merch/mi24-640.jpg" alt="Mi-24 Hind sticker" loading="lazy"></div>
+          <div class="tile-body"><h3>Mi-24 Hind Sticker</h3><div class="tile-meta"><span class="status-badge status-live" data-stock-badge="mi-24-hind-sticker">4 in stock</span><span data-price="mi-24-hind-sticker">$2.00</span></div></div>
+        </a>
       </div>
     </div>
   </section>
@@ -70,6 +78,7 @@
 <div class="drawer" id="wishlist-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Wishlist</h3><div id="wishlist-items"></div></div>
 <div class="drawer" id="cart-drawer"><button class="drawer-close" onclick="closeDrawers()">✕</button><h3>Cart</h3><div class="drawer-empty">Checkout isn't live yet — add to wishlist for now, or check back soon.</div></div>
 <div class="toast" id="toast"></div>
+<script src="/merch.js"></script>
 <script src="/store.js"></script>
 </body>
 </html>

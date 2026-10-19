@@ -15,19 +15,6 @@
       "link": "https://store.steampowered.com/"
     },
     {
-      "id": "epic-games-halloween-sale-2026-10-20",
-      "title": "Epic Games Halloween Sale",
-      "type": "other",
-      "start": "2026-10-20",
-      "end": "2026-10-31",
-      "tentative": true,
-      "store": "Epic",
-      "summary": "Seasonal Themed discounts",
-      "details": "Expected in late October 2026 featuring horror and seasonal-themed game discounts.",
-      "items": "Games",
-      "link": "https://store.epicgames.com"
-    },
-    {
       "id": "steam-winter-2026",
       "title": "Steam Winter Sale",
       "type": "steam",
@@ -65,19 +52,6 @@
       "details": "Dates come from Valve's published schedule, but Valve can still change them.",
       "items": "",
       "link": "https://store.steampowered.com/"
-    },
-    {
-      "id": "kwgne-anniversary-sale-2029-11-13",
-      "title": "KWGnE anniversary sale",
-      "type": "kwge",
-      "start": "2029-11-13",
-      "end": "2029-11-13",
-      "tentative": true,
-      "store": "",
-      "summary": "Various discounts across all products",
-      "details": "KillerWhale Games and Entertainment was founded on the 13th of November 2023\nWe're celebrating our 3rd year anniversary with our first ever sale!!",
-      "items": "Everything",
-      "link": ""
     }
   ]
 }

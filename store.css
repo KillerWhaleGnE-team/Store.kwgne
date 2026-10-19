@@ -133,3 +133,19 @@
 .tag-list span{font-size:.74rem;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:3px 9px;color:var(--slate)}
 .hub-btn{display:block;text-align:center;margin-top:16px}
 @media(max-width:860px){.product-layout{grid-template-columns:1fr;gap:0}.product-side{position:static;margin-top:8px}}
+
+/* ---- merch ---- */
+.tile.sold-out{opacity:.6}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;padding:16px;z-index:60}
+.modal{background:var(--paper);border:1px solid var(--line);border-radius:14px;max-width:460px;width:100%;max-height:90vh;overflow:auto;padding:22px}
+.modal h2{margin:0 0 6px;font-size:1.2rem}
+.modal .m-item{color:var(--slate);font-size:.9rem;margin:0 0 14px}
+.modal .m-qty{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:.9rem}
+.modal .m-qty input{width:70px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit}
+.modal .m-note-inline{color:var(--slate);font-size:.8rem}
+.modal ol{padding-left:20px;color:var(--slate);font-size:.9rem;margin:0 0 14px}
+.modal ol li{margin-bottom:6px}
+.modal ol a{color:var(--accent)}
+.modal textarea{width:100%;min-height:78px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;font-size:.88rem;resize:none}
+.modal .m-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.modal .m-note{color:var(--slate);font-size:.78rem;margin:14px 0 0}
